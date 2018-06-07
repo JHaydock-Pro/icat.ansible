@@ -1,6 +1,6 @@
 ICAT Ansible
 ============
-[![Build Status](https://travis-ci.org/JHaydock-Pro/icat.ansible.svg?branch=PolyVersion)](https://travis-ci.org/JHaydock-Pro/icat.ansible)
+[![Build Status](https://travis-ci.org/icatproject-contrib/icat.ansible.svg?branch=master)](https://travis-ci.org/icatproject-contrib/icat.ansible)
  
 Installer for ICAT, Topcat and all their dependencies.
 Intended for testing purposes.
@@ -17,8 +17,12 @@ Dependencies
 * One Master machine with:
 	* Yum/Apt enabled OS (eg. Ubuntu).
 	* [Ansible](http://docs.ansible.com/ansible/latest/intro_installation.html) and it's dependencies (most are installed automatically with ansible).
+		* For Python 2.6/2.7, Ansible version must be at least 2.3 series (2.3.3 tested)
+		* For Python 3.5/3.6, Ansible version must be at least 2.5.1 (first version to support Python 3)
 	* SSH and root access to all slave machines or 'hosts'.
-	* Python 2.6+ (Selenium Tests will require python2.7 but don't need to run on same machine, see [Topcat_Selenium](https://github.com/JHaydock-Pro/Topcat_Selenium).
+	* Python 2.6, 2.7, 3.5 or 3.6
+		* Python 3.5 is the minimum version of Python 3 supported by Ansible. Note: if you use Python 3, Ansible will run in Python 3 but the python-based ICAT installation scripts will still use Python 2 until they are ported to Python 3.
+		* (Selenium Tests will require python >= 2.7 but don't need to run on same machine, see [Topcat_Selenium](https://github.com/JHaydock-Pro/Topcat_Selenium).
 * At least one (should support any number) of slave machines to install ICAT on. This can include the master machine, just point it to 'localhost'.
 * Patience
 
